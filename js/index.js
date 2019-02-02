@@ -2,7 +2,6 @@
 
 //navs mouseover (mouseenter/out)
 const link = document.querySelectorAll('a');
-console.log(link)
 for(i=0;i<link.length;i++){
 	link[i].addEventListener('mouseenter',function(event){
 		event.target.style.color = "blue";
@@ -15,12 +14,55 @@ for(i=0;i<link.length;i++){
 
 
 //keydown
-const images = document.getElementsByTagName('img')
-console.log(images) 
-
-document.addEventListener('keydown', function(){
-    images[0].style.transform = "rotate(5deg)";
+let images = document.getElementsByTagName('img')
+document.addEventListener('keydown', function(event){
+    images[0].style.transform = "rotate(180deg)";
 })
 
 //when a key is pressed, top image rotates
+
+//wheel
+
+// let hex = 0xF0;
+// document.addEventListener('wheel', function (event) {
+//   hex += 50;
+//   event.target.style = ` background-color: #${hex.toString("16")}`
+// })
+
+// let container = document.querySelector(".container-home")
+// container.addEventListener('wheel', event);
+
+// container.addEventListener('wheel', (event) =>{
+//     container.style.backgroundColor = 'blue';
+//     // event.stopPropagation();
+// })
+
+const destinations = document.querySelectorAll('.destination p');
+destinations.forEach(destination => {
+    destination.addEventListener('wheel', function() {
+        destination.style.fontSize = '2.2rem';
+    });
+});
+
+// changes font of destination paragraphs as user uses the wheel
+
+//drag
+const headers = document.querySelectorAll('h2');
+
+headers.forEach(headers => {
+    headers.addEventListener('drag', function() {
+        headers.style.color =  'green';
+    });
+});
+//dragging items changes h2 to green
+
+//load
+
+//click
+const contact = link[3];
+contact.addEventListener('click', (event) => {
+    alert("hello, here's some contact info");
+})
+//adds alert message when contact link is clicked
+
 
