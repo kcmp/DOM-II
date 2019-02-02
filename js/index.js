@@ -72,9 +72,9 @@ about.addEventListener('dblclick', (event) => {
 })
 //double click on about link turn text green
 
-//select
+//click
 const button = document.querySelector('.btn');
-button.addEventListener('select', (event) => {
+button.addEventListener('click', (event) => {
     button.style.backgroundColor = 'yellow';
     button.style.textColor = 'blue';
 })
@@ -87,3 +87,28 @@ document.addEventListener('scroll', function(){
 	images[1].style.transform = "rotate(180deg)";
 })
 //rotates the second image while scrolling
+
+//copy
+const paragraphs = document.querySelectorAll('p');
+
+paragraphs.forEach(p => {
+    p.addEventListener('copy', function(event) {
+        event.stopPropagation();
+        p.style.color = "maroon";
+    });
+});
+
+//changes color of text when copied
+
+//focus
+let form = document.getElementById('form');
+
+form.addEventListener('focus', function( event ) {
+  event.target.style.background = 'pink';    
+}, true);
+
+form.addEventListener('blur', function( event ) {
+  event.target.style.background = '';    
+}, true);
+
+// added a login bar with focus
