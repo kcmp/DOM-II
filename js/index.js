@@ -65,4 +65,25 @@ contact.addEventListener('click', (event) => {
 })
 //adds alert message when contact link is clicked
 
+// dblclick
+const about = link[1];
+about.addEventListener('dblclick', (event) => {
+	about.style.color = 'green';
+})
+//double click on about link turn text green
 
+//select
+const button = document.querySelector('.btn');
+button.addEventListener('select', (event) => {
+    button.style.backgroundColor = 'yellow';
+    button.style.textColor = 'blue';
+})
+
+//turns first button yellow when selected
+//need to figure out why it doesn't apply to all buttons
+
+//scroll
+document.addEventListener('scroll', function(){
+	images[1].style.transform = "rotate(180deg)";
+})
+//rotates the second image while scrolling
